@@ -242,7 +242,7 @@ angular.module('ui.calendar', [])
           return JSON.stringify(options2);
         }
 
-        scope.destroy = function(){
+        scope.destroyCalendar = function(){
           if(calendar && calendar.fullCalendar){
             calendar.fullCalendar('destroy');
           }
@@ -252,6 +252,7 @@ angular.module('ui.calendar', [])
             calendar = $(elm).html('');
           }
         };
+        scope.$on('$destroy', scope.destroyCalendar);
 
         scope.init = function(){
           calendar.fullCalendar(options);
