@@ -303,7 +303,7 @@ angular.module('ui.calendar', [])
         });
 
         scope.$watch(getOptions, function(newO,oldO){
-            scope.destroy();
+            scope.destroyCalendar();
             scope.init();
         });
       }
